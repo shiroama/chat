@@ -1,7 +1,5 @@
 import React from "react"
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-
 import { AuthProvider } from "../Contexts/AuthContext"
 
 import Chats from "./Chats.js"
@@ -13,8 +11,8 @@ function App() {
       <Router>
         <AuthProvider>
           <Routes>
-            <Route path="/Chats" component={Chats} />
             <Route path="/" component={Login} />
+            <Route path="/Chats" component={Chats} />
           </Routes>
         </AuthProvider>
       </Router>

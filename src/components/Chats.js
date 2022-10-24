@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChatEngine } from "react-chat-engine";
 import { getAuth } from "firebase/auth";
-import { useAuth } from "../Contexts/AuthContext";
+import { UserAuth } from "../Contexts/AuthContext";
 import axios from "axios";
 
 
 const auth = getAuth()
 const Chats = () => {
   const history = useNavigate();
-  const { user } = useAuth();
+  const { user } = UserAuth();
   const { loading, setLoading } = useState(true);
 
   const handleLogout = async () => {
@@ -59,6 +59,7 @@ const Chats = () => {
   }, [user, history]);
 
   if(!user || loading) return 'loading...';
+  
   return (
     <div className="chats-page">
       <div className="nav-bar">
