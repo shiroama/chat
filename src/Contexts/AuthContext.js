@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       setUser(currentUser);
       setLoading(false);
       console.log(currentUser);
-      // history("/Chats");
+    //   history("/Chats");
     });
 
     return () => unsubscrible;
